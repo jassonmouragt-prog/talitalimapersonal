@@ -41,10 +41,14 @@
   /* ----- Scroll suave (Lenis integrado ao ticker do GSAP) ----- */
   var lenis = null;
   if (!prefersReduced && gsapReady && window.Lenis) {
-    lenis = new Lenis({ lerp: 0.09, smoothWheel: true });
+    document.documentElement.style.scrollBehavior = 'auto'; // evita conflito com Lenis
+    lenis = new Lenis({ lerp: 0.13, smoothWheel: true });
     lenis.on('scroll', ScrollTrigger.update);
     gsap.ticker.add(function (time) { lenis.raf(time * 1000); });
     gsap.ticker.lagSmoothing(0);
+  } else {
+    // Sem Lenis: âncoras usam scroll nativo suave do navegador.
+    document.documentElement.style.scrollBehavior = 'smooth';
   }
 
   /* ----- Âncoras internas acompanham o scroll suave ----- */
