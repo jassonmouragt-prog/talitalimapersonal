@@ -1,0 +1,23 @@
+# Dependências / build
+node_modules/
+
+# Vercel
+.vercel/
+
+# Sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+~$*
+
+# Logs
+*.log
+
+# Fotos-fonte não otimizadas (já convertidas em assets/img/)
+banner hero desktop.png
+banner hero mobile.png
+imagem autoridade.jpg
+imagem profissional.jpg
+logo TL.png
+talita lima logo.png
+talitapersonal__*.jpg
